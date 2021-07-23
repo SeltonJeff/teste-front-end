@@ -1,0 +1,163 @@
+@font-face {
+  font-family: Gilroy;
+  src: url("./resources/font/SVN-Gilroy Regular.ttf");
+}
+:root {
+  --primary-color: #2693ff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gilroy, sans-serif;
+}
+.centralize {
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+}
+.direction-col {
+  flex-direction: column;
+}
+.direction-row {
+  flex-direction: row;
+}
+input {
+  border: 2px solid rgba(38,147,255,0.4);
+  border-radius: 4px;
+  height: 36px;
+  outline: 0;
+  width: 250px;
+}
+input:focus {
+  border: 2px solid #2693ff;
+}
+.menu-item {
+  width: 100%;
+}
+.menu-item:hover {
+  background-color: #1182f2;
+}
+@media (min-width: 800px) {
+  .full-height {
+    height: 100vh;
+  }
+  .full-width {
+    width: 70vw;
+  }
+  .primary-color {
+    background-color: #2693ff;
+    color: #fff;
+  }
+  .secondary-color {
+    background-color: #fff;
+    color: #000;
+  }
+  h1 {
+    font-size: 0.7em;
+    margin-bottom: 5px;
+  }
+  #login-logo {
+    width: 30vw;
+  }
+  .profile {
+    display: flex;
+  }
+  .profile-image {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 40px;
+    margin: auto;
+  }
+  .profile-description {
+    margin: auto;
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  .profile-name {
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .profile-rule {
+    color: #2693ff;
+    font-weight: bold;
+    font-size: 0.7em;
+  }
+  .tasks {
+    background-color: #e9f4fb;
+    height: 100vh;
+    width: 100vw;
+  }
+  .my-tasks-label {
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .header-profile {
+    display: flex;
+    justify-content: flex-end;
+    height: 60px;
+    box-shadow: 1px -4px 10px #808080;
+  }
+  .group-list {
+    margin: 30px;
+    background-color: #f4fbff;
+    height: 90vh;
+    align-items: flex-start;
+    width: 20vw;
+    justify-content: space-between;
+    font-size: 0.7em;
+    font-weight: bold;
+  }
+  #category {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 799px) {
+  @font-face {
+    font-family: Gilroy;
+    src: url("./resources/font/SVN-Gilroy Regular.ttf");
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Gilroy, sans-serif;
+  }
+  .m-teme {
+    background-color: #2693ff;
+    color: #fff;
+  }
+  .full-height {
+    height: 100vh;
+  }
+  .full-width {
+    width: 100vw;
+  }
+  h1 {
+    font-size: 0.7em;
+    margin-bottom: 5px;
+  }
+  #login-logo {
+    position: absolute;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    text-align: center;
+  }
+  .login {
+    z-index: 1;
+  }
+  .profile {
+    display: inline-flex;
+  }
+  .menu {
+    display: none;
+  }
+  .group-list {
+    display: none;
+  }
+}
