@@ -10,7 +10,7 @@ const userProfile = Vue.component('user-profile', {
     },
 
     template: `
-        <div class="inline-block">
+        <div class="profile">
             <img v-bind:src="user.imgSrc"
                 v-bind:style="{
                     width: '40px',

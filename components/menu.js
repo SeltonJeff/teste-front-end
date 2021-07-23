@@ -25,7 +25,7 @@ const menu = Vue.component('nav-bar', {
     template:`
         <div 
             style="background-color: var(--primary-color); color: white;"
-            class="container direction-col">
+            class="menu container direction-col">
                 
             <img src="" alt="logo">
             

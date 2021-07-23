@@ -22,8 +22,8 @@ const tasks = Vue.component('tasks', {
         style() {
             return {
                 backgroundColor: 'rgb(233,244,251)',
-                height: '100vh',
-                width: '100vw'
+                height: '100%',
+                width: '100%'
             }
         }
     },
@@ -111,7 +111,7 @@ const tasks = Vue.component('tasks', {
     },
 
     template:`
-        <div class="centralize container direction-row">
+        <div class="tasks centralize container direction-row">
             <group-list :list="orderTasks('priority', userTasks)" :groupKey="'status'"></group-list>
             <div class="centralize container direction-col" :style="style">
                 <h1> Olá {{user.name}}, você tem {{userTasks.length}} tarefas pendentes. </h1>
@@ -131,6 +131,6 @@ const tasks = Vue.component('tasks', {
                     color:white">
                 <i class="fas fa-plus"></i>
             </div>
-            <task-form v-if="showTaskForm" :active="showTaskForm" @emit-task="createTask"></task-form>
+            <task-form v-if="showTaskForm" :active="showTaskForm" @emit-task="createTask" class="btn-add-task"></task-form>
         </div>`
 })

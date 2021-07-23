@@ -40,6 +40,9 @@ input:focus {
 .menu-item:hover {
   background-color: #1182f2;
 }
+.btn-add-task{
+  
+}
 @media (min-width: 800px) {
   .full-height {
     height: 100vh;
@@ -89,7 +92,8 @@ input:focus {
   .tasks {
     background-color: #e9f4fb;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    z-index: 0;
   }
   .my-tasks-label {
     font-size: 1em;
@@ -100,17 +104,17 @@ input:focus {
     justify-content: flex-end;
     height: 60px;
     box-shadow: 1px -4px 10px #808080;
+    z-index: 1;
   }
   .group-list {
-    margin: 30px;
+    padding-left: 30px;
     background-color: #f4fbff;
-    height: 90vh;
     align-items: flex-start;
-    width: 20vw;
-    justify-content: space-between;
+    width: 20%;
     font-size: 0.7em;
     font-weight: bold;
   }
+
   #category {
     margin-bottom: 30px;
   }
@@ -156,6 +160,7 @@ input:focus {
   }
   .menu {
     display: none;
+    z-index: 1;
   }
   .group-list {
     display: none;

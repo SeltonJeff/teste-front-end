@@ -41,7 +41,7 @@ const groupList = Vue.component('group-list', {
         }
     },
     template: `
-        <div class="centralize container direction-col" :style="style">
+        <div class="centralize container direction-col group-list" :style="style">
             <div>Categorias</div>
             <div v-for="(array, key) in groupedList" class="container direction-row">
                 <div style="margin: 5px">
