@@ -24,11 +24,11 @@ const loginPage = Vue.component('login-page', {
     },
 
     template: `
-        <div class="container">
+        <div class="container m-teme">
             <div id="login-logo" class="full-height flex-container primary-color centralize">
                 <img src="" alt="app-logo">
             </div>
-            <div class="container centralize full-height full-width">
+            <div class="login container centralize full-height full-width">
                 <div method="post" class="container direction-col">
                     <h1>Entre com seus dados de acesso.</h1>
 

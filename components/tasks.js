@@ -115,9 +115,13 @@ const tasks = Vue.component('tasks', {
         <div class="tasks container direction-row">
             <group-list :list="orderTasks('priority', userTasks)" :groupKey="'status'"></group-list>
             <div class="frame-tasks  container direction-col" :style="style">
-                <h3>Minhas Tarefas</h3>
-                <p style="font-wight: normal; font-size: 1em;"> Olá <span class="txt-markup">{{user.name}}</span>, você tem <span class="txt-markup">{{userTasks.length}}</span> tarefas pendentes. </p>
-                <div>placeholder filter</div>
+
+                <div class="ident">
+                    <h3>Minhas Tarefas</h3>
+                    <p style="font-wight: normal; font-size: 1em;"> Olá <span class="txt-markup">{{user.name}}</span>, você tem <span class="txt-markup">{{userTasks.length}}</span> tarefas pendentes. </p>
+                    <div>placeholder filter</div>
+                </div>
+                
                 <div class="overflow-scroll">
                     <task-card v-for="(task, index) in orderTasks('priority', userTasks)" :task="task" :key="index"></task-card>
                 </div>

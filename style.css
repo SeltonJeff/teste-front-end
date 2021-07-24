@@ -64,6 +64,9 @@ input:focus, textarea:focus {
 .txt-markup{
   color: #2693ff;
 }
+.ident{
+  margin-left: 5px;
+}
 @media (min-width: 800px) {
   .full-height {
     height: 100vh;
@@ -185,5 +188,9 @@ input:focus, textarea:focus {
   }
   .group-list {
     display: none;
+  }
+  .frame-tasks{
+    height: 100vh;
+    width: 100vw;
   }
 }
