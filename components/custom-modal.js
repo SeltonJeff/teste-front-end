@@ -15,6 +15,7 @@ const customModal = Vue.component('custom-modal', {
                 position: 'absolute',
                 top: "0",
                 left: "0",
+                zIndex: '5',
             }
         },
         modal() {
@@ -24,7 +25,7 @@ const customModal = Vue.component('custom-modal', {
                 opacity: 'white',
                 padding: '32px',
                 transition: 'top 2s',
-                
+                zIndex: '6',
             }
         }
 

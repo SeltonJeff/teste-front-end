@@ -48,7 +48,7 @@ const customInput = Vue.component('custom-input', {
                 @input="$emit('input', $event.target.value)">
             <textarea 
                 v-if="type === 'textarea'" 
-                style="resize: none; height: 20vw"
+                style="resize: none; height: 15vh"
                 @input="$emit('input', $event.target.value)">{{value}}</textarea>
             <label v-if="isRadio">{{title}}</label>
             <button 
