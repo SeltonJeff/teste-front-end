@@ -14,11 +14,12 @@ const header = Vue.component('main-header', {
     },
 
     template: `
-        <div style="
+        <div chass="header-profile" style="
             display: flex; 
             justify-content: flex-end;
-            height: 60px;
             box-shadow: 1px -4px 10px gray;
+            min-height: 60px;
+            z-index: 3;
         ">
             <user-profile v-bind:user="user"></user-profile>
         </div>

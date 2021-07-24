@@ -22,8 +22,9 @@ const tasks = Vue.component('tasks', {
         style() {
             return {
                 backgroundColor: 'rgb(233,244,251)',
-                height: '100%',
-                width: '100%'
+                marginTop: '10vh',
+                height: '80vh',
+               
             }
         }
     },
@@ -111,12 +112,15 @@ const tasks = Vue.component('tasks', {
     },
 
     template:`
-        <div class="tasks centralize container direction-row">
+        <div class="tasks container direction-row">
             <group-list :list="orderTasks('priority', userTasks)" :groupKey="'status'"></group-list>
-            <div class="centralize container direction-col" :style="style">
-                <h1> Olá {{user.name}}, você tem {{userTasks.length}} tarefas pendentes. </h1>
+            <div class="frame-tasks  container direction-col" :style="style">
+                <h3>Minhas Tarefas</h3>
+                <p style="font-wight: normal; font-size: 1em;"> Olá <span class="txt-markup">{{user.name}}</span>, você tem <span class="txt-markup">{{userTasks.length}}</span> tarefas pendentes. </p>
                 <div>placeholder filter</div>
-                <task-card v-for="(task, index) in orderTasks('priority', userTasks)" :task="task" :key="index"></task-card>
+                <div class="overflow-scroll">
+                    <task-card v-for="(task, index) in orderTasks('priority', userTasks)" :task="task" :key="index"></task-card>
+                </div>
             </div>
             <div class="fa-lg" 
                 @click="showTaskForm = true" 
@@ -125,12 +129,14 @@ const tasks = Vue.component('tasks', {
                     width: 64px; 
                     height: 64px; 
                     border-radius: 64px; 
-                    position: fixed; 
+                    position: absolute;
+                    top: 82%;
+                    left: 90%;
                     text-align: center; 
                     line-height: 64px; 
                     color:white">
                 <i class="fas fa-plus"></i>
             </div>
-            <task-form v-if="showTaskForm" :active="showTaskForm" @emit-task="createTask" class="btn-add-task"></task-form>
+            <task-form v-if="showTaskForm" :active="showTaskForm" @emit-task="createTask" class="btn-add-task""></task-form>
         </div>`
 })

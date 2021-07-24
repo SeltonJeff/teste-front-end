@@ -21,7 +21,9 @@ const taskCard = Vue.component('task-card', {
             return {
                 backgroundColor: bgColor,
                 borderRadius: "4px",
-                height: "48px",
+                height: "42px",
+                marginTop: "3px",
+                marginBottom: "3px",
                 width: "42px",
                 cursor: cursorMode
                 
@@ -35,6 +37,7 @@ const taskCard = Vue.component('task-card', {
                 borderRadius: "6px",
                 justifyContent: 'space-between',
                 width: "45vw",
+                height: "60px",
                 opacity
             }
         },
@@ -45,6 +48,7 @@ const taskCard = Vue.component('task-card', {
                 padding: "15px"
             }
         },
+
     }, 
     
     methods: {
@@ -54,24 +58,28 @@ const taskCard = Vue.component('task-card', {
     },
 
     template:`
-        <div class="container centralize" :style=" [cardStyle, defaultStyle] ">
-            <div 
-                :style=" {color: 'rgb(40,167,69)'} "
-                @mouseover= "isHover= true"
-                @mouseout= "isHover= false"
-                @click= "completeTask">
+        <div class="container " :style=" [cardStyle, defaultStyle] ">
+            <div style="display:flex; 
+                align-items: center; 
+                text-align: center;">
                 <div 
-                    v-if="!task.completed"
-                    :style="[checkBoxStyle]">
+                    :style=" {color: 'rgb(40,167,69)'} "
+                    @mouseover= "isHover= true"
+                    @mouseout= "isHover= false"
+                    @click= "completeTask">
+                    <div 
+                        v-if="!task.completed"
+                        :style="[checkBoxStyle]">
+                    </div>
+                    <i 
+                        v-else-if="task.completed"
+                        class="fas fa-check-square fa-3x">
+                    </i>
                 </div>
-                <i 
-                    v-else-if="task.completed"
-                    class="fas fa-check-square fa-3x">
-                </i>
+
+                <div id="task-description" style="font-weight: bold; margin-left: 10px;"> {{task.description}} </div>
             </div>
 
-            <div style="font-weight: bold"> {{task.description}} </div>
-            
             <custom-flair 
                 v-if="(task.status == 'Urgente')" 
                 :text="task.status"

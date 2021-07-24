@@ -24,18 +24,23 @@ const menu = Vue.component('nav-bar', {
     
     template:`
         <div 
-            style="background-color: var(--primary-color); color: white;"
+            style="background-color: var(--primary-color); 
+                color: white;
+                box-shadow: -1px 5px 5px #808080;
+                z-index: 4;"
             class="menu container direction-col">
                 
             <img src="" alt="logo">
             
-            <div class="centralize container direction-col" style=" margin: auto">
+            <div class="centralize container direction-col" style=" margin: auto;">
                 <menu-option 
                     v-for="(option, index) in options" 
                     v-bind:key="index"
                     :icon="option.icon" 
                     :text="option.name"
-                    style=" margin: 10px"
+                    style=" margin: 10px; 
+                        cursor: pointer;"
+                    class="menu-item"
                 >    
                 </menu-option>
             </div>

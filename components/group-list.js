@@ -15,6 +15,8 @@ const groupList = Vue.component('group-list', {
                 height: '100vh',
                 alignItems: 'flex-start',
                 width: '20vw',
+                zIndex: 1,
+                boxShadow: '-1px 5px 5px #808080',
             }
         },
         groupedList() {

@@ -10,9 +10,11 @@ const customModal = Vue.component('custom-modal', {
         overlay() {
             return {
                 backgroundColor: 'rgba(135,153,171, 0.75)',
-                height: '100vw',
-                position: 'fixed',
+                height: '100vh',
                 width: '100vw',
+                position: 'absolute',
+                top: "0",
+                left: "0",
             }
         },
         modal() {
@@ -21,7 +23,6 @@ const customModal = Vue.component('custom-modal', {
                 borderRadius: '6px',
                 opacity: 'white',
                 padding: '32px',
-                position: "fixed",
                 transition: 'top 2s',
                 
             }

@@ -11,6 +11,10 @@
   box-sizing: border-box;
   font-family: Gilroy, sans-serif;
 }
+body{
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
 .centralize {
   justify-content: center;
   align-items: center;
@@ -40,8 +44,20 @@ input:focus {
 .menu-item:hover {
   background-color: #1182f2;
 }
-.btn-add-task{
-  
+.frame-tasks{
+  margin: auto;
+}
+.overflow-scroll{
+  overflow-y: hidden;
+  margin: auto;
+  padding-right: 17px;
+}
+.overflow-scroll:hover{
+  padding-right: 0;
+  overflow-y: scroll;
+}
+.txt-markup{
+  color: #2693ff;
 }
 @media (min-width: 800px) {
   .full-height {

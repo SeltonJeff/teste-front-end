@@ -17,12 +17,15 @@ const customFlair = Vue.component('custom-flair', {
             }
 
             return {
+                maxHeight: "25px",
                 backgroundColor,
                 borderRadius: "12px",
                 color: "white",
                 fontSize: "0.75em",
                 fontWeight: "500",
-                padding: "5px 10px 5px 10px"    
+                padding: "5px 10px 5px 10px",
+                marginTop: "auto",
+                marginBottom: "auto",
             }
         }
     },
