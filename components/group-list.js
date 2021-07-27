@@ -14,7 +14,8 @@ const groupList = Vue.component('group-list', {
                 backgroundColor: 'rgb(244,251,255)',
                 height: '100vh',
                 alignItems: 'flex-start',
-                width: '20vw',
+                width: '18vw',
+                minWidth: '180px',
                 zIndex: 1,
                 boxShadow: '-1px 5px 5px #808080',
             }
@@ -44,7 +45,11 @@ const groupList = Vue.component('group-list', {
     },
     template: `
         <div class="centralize container direction-col group-list" :style="style">
-            <div>Categorias</div>
+            <div style="
+                position: relative;
+                top: -40px;
+                margin-left: 5px; 
+            ">Categorias</div>
             <div v-for="(array, key) in groupedList" class="container direction-row">
                 <div style="margin: 5px">
                     <i class="fas fa-chevron-right fa-xs"></i>

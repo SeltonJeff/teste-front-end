@@ -1,5 +1,5 @@
 const customInput = Vue.component('custom-input', {
-    props: ["color", "name", "onClick", "title", "type", "value"],
+    props: ["color", "name", "onClick", "title", "type", "value", "placeholder"],
     data() {
         return {
 
@@ -9,6 +9,13 @@ const customInput = Vue.component('custom-input', {
     computed: {
         isRadio() {
             return this.type === "radio"
+        },
+        radioStyle() {
+            return {
+                transform: 'scale(0.5)',
+                fontSize: '2em',
+                width: '200px',
+            }
         },
         isButton() {
             return this.type === "button" || this.type === "sm-button"
@@ -38,13 +45,14 @@ const customInput = Vue.component('custom-input', {
     },
 
     template: `
-        <div :class="['container', (!isRadio ? 'direction-col' : 'direction-row')]">
+        <div :class="['container', (!isRadio ? 'direction-col' : 'direction-row')]" :style="(!isRadio ? '' : radioStyle )">
             <label v-if="!isRadio && !isButton">{{title}}</label>
             <input 
                 v-if="!isButton && type !== 'textarea' "
                 :name="name"
                 :type="type"
                 :value="value"
+                :placeholder="placeholder"
                 @input="$emit('input', $event.target.value)">
             <textarea 
                 v-if="type === 'textarea'" 

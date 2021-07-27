@@ -26,7 +26,6 @@ const taskCard = Vue.component('task-card', {
                 marginBottom: "3px",
                 width: "42px",
                 cursor: cursorMode
-                
             }
         },
 
@@ -36,7 +35,6 @@ const taskCard = Vue.component('task-card', {
                 backgroundColor: "white",
                 borderRadius: "6px",
                 justifyContent: 'space-between',
-                width: "45vw",
                 height: "60px",
                 opacity
             }

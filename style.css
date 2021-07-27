@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Gilroy, sans-serif;
+  user-select: none;
 }
 body{
   overflow-y: hidden;
@@ -29,11 +30,12 @@ body{
   flex-direction: row;
 }
 input {
+  position: 'relative';
   border: 2px solid rgba(38,147,255,0.4);
   border-radius: 4px;
   height: 36px;
   outline: 0;
-  width: 250px;
+  width: 100%;
 }
 textarea {
   border: 2px solid rgba(38,147,255,0.4);
@@ -66,6 +68,12 @@ input:focus, textarea:focus {
 }
 .ident{
   margin-left: 5px;
+}
+#logo{
+  display: flex;
+  position: relative;
+  max-width: 300px;
+  object-fit: cover;
 }
 @media (min-width: 800px) {
   .full-height {
@@ -119,6 +127,9 @@ input:focus, textarea:focus {
     width: 100%;
     z-index: 0;
   }
+  .task-card{
+    width: 45vw;
+  }
   .my-tasks-label {
     font-size: 1em;
     font-weight: bold;
@@ -141,6 +152,22 @@ input:focus, textarea:focus {
 
   #category {
     margin-bottom: 30px;
+  }
+  .add-task{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22,208,141); 
+    width: 64px; 
+    height: 64px; 
+    border-radius: 64px; 
+    position: absolute;
+    top: calc(100vh - 80px);
+    left:  calc(100vw - 80px);
+    text-align: center; 
+    line-height: 64px; 
+    color:white;
   }
 }
 @media (max-width: 799px) {
@@ -171,8 +198,9 @@ input:focus, textarea:focus {
   #login-logo {
     position: absolute;
     width: 100vw;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: top;
     padding-top: 50px;
     text-align: center;
   }
@@ -192,5 +220,26 @@ input:focus, textarea:focus {
   .frame-tasks{
     height: 100vh;
     width: 100vw;
+  }
+  .tasks {
+    background-color: #e9f4fb;
+    width: 100vw;
+    z-index: 0;
+  }
+  .task-card{
+    width: calc(100vw - 10px);
+  }
+  .add-task{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22,208,141); 
+    width: 100vw; 
+    height: 64px; 
+    position: absolute;
+    top: calc(100% - 64px);
+    left: 0;
+    text-align: center; 
+    color:white;
   }
 }

@@ -24,7 +24,6 @@ const tasks = Vue.component('tasks', {
                 backgroundColor: 'rgb(233,244,251)',
                 marginTop: '10vh',
                 height: '80vh',
-               
             }
         }
     },
@@ -108,6 +107,7 @@ const tasks = Vue.component('tasks', {
     components: {
         'group-list': groupList,
         'task-card': taskCard,
+        'custom-input': customInput,
         'task-form': taskForm,
     },
 
@@ -115,30 +115,33 @@ const tasks = Vue.component('tasks', {
         <div class="tasks container direction-row">
             <group-list :list="orderTasks('priority', userTasks)" :groupKey="'status'"></group-list>
             <div class="frame-tasks  container direction-col" :style="style">
-
                 <div class="ident">
                     <h3>Minhas Tarefas</h3>
                     <p style="font-wight: normal; font-size: 1em;"> Olá <span class="txt-markup">{{user.name}}</span>, você tem <span class="txt-markup">{{userTasks.length}}</span> tarefas pendentes. </p>
-                    <div>placeholder filter</div>
                 </div>
-                
+
+                <div style="
+                    position: relative;
+                    width: 100%;
+                ">
+                    <custom-input
+                        :type="text"
+                        :name="searchTask"
+                        :placeholder="'Buscar Tarefas'"
+                        style="
+                            margin-left: 4px;
+                            margin-right: 5px;
+                            margin-top: 20px;
+                            margin-bottom: 20px;"
+                    ></custom-input>
+                </div>
+
                 <div class="overflow-scroll">
-                    <task-card v-for="(task, index) in orderTasks('priority', userTasks)" :task="task" :key="index"></task-card>
+                    <task-card class="task-card" v-for="(task, index) in orderTasks('priority', userTasks)" :task="task" :key="index"></task-card>
                 </div>
             </div>
-            <div class="fa-lg" 
-                @click="showTaskForm = true" 
-                style= "
-                    background-color: rgb(22,208,141); 
-                    width: 64px; 
-                    height: 64px; 
-                    border-radius: 64px; 
-                    position: absolute;
-                    top: 82%;
-                    left: 90%;
-                    text-align: center; 
-                    line-height: 64px; 
-                    color:white">
+            <div class="fa-lg add-task" 
+                @click="showTaskForm = true">
                 <i class="fas fa-plus"></i>
             </div>
             <task-form v-if="showTaskForm" :active="showTaskForm" @emit-task="createTask" class="btn-add-task""></task-form>

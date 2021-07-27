@@ -18,14 +18,14 @@ const customForm = Vue.component('custom-form', {
             <h2>{{ formConfig.header }}</h2>
             <div v-for="item in formConfig.fields" :style="{margin: '12px 0 8px 0'}">    
                 <div v-if="item.type == 'radio'" class="container">
-                    <div v-for="option in item.options" class="container">
+                    <div v-for="option in item.options" >
                         <custom-input :title="option.title" :type="item.type" :name="item.title"></custom-input>
                     </div>
                 </div>
                 <custom-input v-else
                     :color="item.color"
                     :onClick="emit"
-                    :title="item.title" 
+                    :title="item.title"
                     :type="item.type"
                     :value="item.value"
                     v-model="item.value">
